@@ -110,26 +110,29 @@
     .slideshow-container {
       position: relative;
       width: 100%;
-      max-width: 550px; /* ⭐ slightly wider frame */
+      max-width: 550px;
       margin: 0 auto;
       border-radius: 12px;
-      padding: 1rem; /* ⭐ clean border space */
-      background: rgba(255,255,255,0.6); /* ⭐ soft frame */
+      padding: 1rem;
+      background: rgba(255,255,255,0.6);
       box-shadow: 0 0 12px rgba(0,0,0,0.15);
     }
 
+    /* ⭐ FIX: strict frame height so images never overflow */
     .commission-slide {
       display: none;
       width: 100%;
+      height: 380px; /* consistent frame */
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
+    /* ⭐ FIX: image scales down to fit inside frame */
     .commission-slide img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain; /* ⭐ uncropped */
+      object-fit: contain; /* uncropped */
       border-radius: 10px;
       background: rgba(255,255,255,0.8);
       padding: 10px;
