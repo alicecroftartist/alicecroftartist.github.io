@@ -14,7 +14,6 @@
       position: relative;
     }
 
-    /* Background image */
     body::before {
       content: "";
       position: fixed;
@@ -30,7 +29,6 @@
       pointer-events: none;
     }
 
-    /* Soft vignette overlay */
     body::after {
       content: "";
       position: fixed;
@@ -40,52 +38,18 @@
       height: 100%;
       pointer-events: none;
       z-index: -1;
-      background: radial-gradient(
-        circle,
-        rgba(0,0,0,0) 60%,
-        rgba(0,0,0,0.25) 100%
-      );
+      background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.25) 100%);
     }
 
-    header { 
-      text-align: center; 
-      padding: 2.5rem 1rem 1rem; 
-    }
+    header { text-align: center; padding: 2.5rem 1rem 1rem; }
+    header img { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
 
-    header img { 
-      width: 100%; 
-      max-width: 600px; 
-      height: auto; 
-      display: block; 
-      margin: 0 auto; 
-    }
+    nav { text-align: center; margin-top: 1rem; }
+    nav a { margin: 0 1rem; text-decoration: none; color: #1f3d2c; font-weight: 600; border-bottom: 3px solid transparent; padding-bottom: 4px; }
+    nav a:hover { border-bottom: 3px solid #e8c84a; }
 
-    nav { 
-      text-align: center; 
-      margin-top: 1rem; 
-    }
+    main { max-width: 900px; margin: 4rem auto; padding: 0 2rem; text-align: center; }
 
-    nav a { 
-      margin: 0 1rem; 
-      text-decoration: none; 
-      color: #1f3d2c; 
-      font-weight: 600; 
-      border-bottom: 3px solid transparent; 
-      padding-bottom: 4px; 
-    }
-
-    nav a:hover { 
-      border-bottom: 3px solid #e8c84a; 
-    }
-
-    main { 
-      max-width: 900px; 
-      margin: 4rem auto; 
-      padding: 0 2rem; 
-      text-align: center;
-    }
-
-    /* Blurred-edge content box */
     .exhibitions-box {
       padding: 2rem;
       border-radius: 10px;
@@ -104,7 +68,6 @@
       padding-bottom: 4px;
     }
 
-    /* Exhibition cards */
     .exhibition-card {
       text-align: left;
       margin: 2rem auto;
@@ -124,11 +87,19 @@
       padding-bottom: 4px;
     }
 
-    footer { 
-      text-align: center; 
-      padding: 3rem 1rem; 
-      font-size: 0.9rem; 
+    .exhibition-image {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      display: block;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      object-fit: contain;
+      background: rgba(255,255,255,0.5);
+      padding: 10px;
     }
+
+    footer { text-align: center; padding: 3rem 1rem; font-size: 0.9rem; }
   </style>
 </head>
 
@@ -162,51 +133,56 @@
       <h2>Current Exhibitions</h2>
 
       <div class="exhibition-card">
+        <img class="exhibition-image" src="ironbridge print.jpg" alt="Me with ironbridge print">
         <h3>Ironbridge printmaking competition 2026</h3>
-        <p><strong>Location:Ironbridge fine arts and framing, Merrythought Village, Dale End, Coalbrookdale, Telford TF8 7NJ</strong><p>
+        <p><strong>Location:</strong> Ironbridge Fine Arts and Framing, Telford</p>
         <p><strong>Dates:</strong> 4th July – 26th September 2026</p>
         <p><strong>Works Exhibited:</strong></p>
         <ul>
-          <li>"Impressions of kirkgate markets"</li>
+          <li>"Impressions of Kirkgate Markets"</li>
         </ul>
       </div>
 
       <div class="exhibition-card">
+        <img class="exhibition-image" src="kapow exhibition.jpg" alt="kapow exhibition">
         <h3>Art in Arcadia</h3>
-        <p><strong>Location: Kapow Coffee, 15 Thornton's Arcade, Leeds LS1 6LQ</strong><p>
-        <p><strong>Dates:</strong> 11th - 20th September 2026</p>
+        <p><strong>Location:</strong> Kapow Coffee, Leeds</p>
+        <p><strong>Dates:</strong> 11th – 20th September 2026</p>
         <p><strong>Works Exhibited:</strong></p>
         <ul>
-          <li>"Impressions of kirkgate markets"</li>
-          <li>"A gaggle of gregarious greylag geese"</li>
-          <li>"The forgotten summerhouse"</li>
+          <li>"Impressions of Kirkgate Markets"</li>
+          <li>"A Gaggle of Gregarious Greylag Geese"</li>
+          <li>"The Forgotten Summerhouse"</li>
           <li>"Guardians of the Civic Hall"</li>
-        </ul>
-      </div>
-
-       <div class="exhibition-card">
-        <h3>Roundhay artists at Headingley Heart</h3>
-        <p><strong>Location: Heart Centre, Headingley Enterprise & Arts Centre, Bennett Rd, Headingley, Leeds LS6 3HN</strong><p>
-        <p><strong>Dates:</strong> 15th September - 24th October 2026</p>
-        <p><strong>Works Exhibited:</strong></p>
-        <ul>
-          <li>"Impressions of kirkgate markets"</li>
-          <li>"A gaggle of gregarious greylag geese"</li>
-          <li>"The forgotten summerhouse"</li>
-          <li>"Guardians of the Civic Hall"</li>
-          <li>"Curlews calling over Pateley Bridge"</li>
         </ul>
       </div>
 
       <div class="exhibition-card">
-        <h3>Howard Assembly rooms x Leeds open studios</h3>
-        <p><strong>Location: The Grand Theatre & Opera House Leeds, 32-34 New Briggate, Leeds LS1 6NU</strong><p>
-        <p><strong>Dates:</strong> 13th September - 13th December 2026 </p>
+        <img class="exhibition-image" src="summerhouse.jpg" alt="Summerhouse">
+        <h3>Roundhay Artists at Headingley Heart</h3>
+        <p><strong>Location:</strong> Heart Centre, Headingley</p>
+        <p><strong>Dates:</strong> 15th September – 24th October 2026</p>
         <p><strong>Works Exhibited:</strong></p>
         <ul>
-          <li>"A gaggle of gregarious greylag geese"</li>
+          <li>"Impressions of Kirkgate Markets"</li>
+          <li>"A Gaggle of Gregarious Greylag Geese"</li>
+          <li>"The Forgotten Summerhouse"</li>
+          <li>"Guardians of the Civic Hall"</li>
+          <li>"Curlews Calling Over Pateley Bridge"</li>
         </ul>
       </div>
+
+      <div class="exhibition-card">
+        <img class="exhibition-image" src=".jpg" alt="Greylag Geese">
+        <h3>Howard Assembly Rooms x Leeds Open Studios</h3>
+        <p><strong>Location:</strong> The Grand Theatre, Leeds</p>
+        <p><strong>Dates:</strong> 13th September – 13th December 2026</p>
+        <p><strong>Works Exhibited:</strong></p>
+        <ul>
+          <li>"A Gaggle of Gregarious Greylag Geese"</li>
+        </ul>
+      </div>
+
     </div>
 
     <!-- UPCOMING -->
@@ -214,14 +190,15 @@
       <h2>Upcoming Exhibitions</h2>
 
       <div class="exhibition-card">
+        <img class="exhibition-image" src="kirkgate_markets.jpg" alt="Kirkgate Markets">
         <h3>Art at No. 15</h3>
-        <p><strong>Location: the Leeds Library, 15-18 Commercial Street, LS1 6AL</strong><p>
+        <p><strong>Location:</strong> The Leeds Library</p>
         <p><strong>Dates:</strong> 1st October 2026 – 1st January 2027</p>
         <p><strong>Works to be Exhibited:</strong></p>
         <ul>
           <li>"Impressions of Kirkgate Markets"</li>
-          <li>"A gaggle of gregarious greylag geese"</li>
-          <li>"The forgotten summerhouse"</li>
+          <li>"A Gaggle of Gregarious Greylag Geese"</li>
+          <li>"The Forgotten Summerhouse"</li>
         </ul>
       </div>
 
@@ -232,22 +209,24 @@
       <h2>Past Exhibitions</h2>
 
       <div class="exhibition-card">
-        <h3>All things hidden and unseen</h3>
-        <p><strong>Location: Gallery 24, 24 Snig Hill, Sheffield City Centre, Sheffield S3 8NB</strong></p>
-        <p><strong>Dates:</strong> 12th - 24th August 2026</p>
+        <img class="exhibition-image" src="holding summerhouse.jpg" alt="The Forgotten Summerhouse">
+        <h3>All Things Hidden and Unseen</h3>
+        <p><strong>Location:</strong> Gallery 24, Sheffield</p>
+        <p><strong>Dates:</strong> 12th – 24th August 2026</p>
         <p><strong>Works Exhibited:</strong></p>
         <ul>
-          <li>"The forgotten summerhouse"</li>
+          <li>"The Forgotten Summerhouse"</li>
         </ul>
       </div>
 
-            <div class="exhibition-card">
+      <div class="exhibition-card">
+        <img class="exhibition-image" src="summerhouse exhibition.jpg" alt="The Forgotten Summerhouse">
         <h3>Flora and Fauna</h3>
-        <p><strong>Location: Open Gallery CIC, 4a Broad St Plaza, Halifax HX1 1UX</strong></p>
-        <p><strong>Dates:</strong> 26th August - 12th September 2026</p>
+        <p><strong>Location:</strong> Open Gallery CIC, Halifax</p>
+        <p><strong>Dates:</strong> 26th August – 12th September 2026</p>
         <p><strong>Works Exhibited:</strong></p>
         <ul>
-          <li>"The forgotten summerhouse"</li>
+          <li>"The Forgotten Summerhouse"</li>
         </ul>
       </div>
 
