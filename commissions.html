@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    body { 
-      margin: 0; 
-      font-family: "Helvetica Neue", sans-serif; 
-      background: #faf8f2; 
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background: #faf8f2;
       color: #1f3d2c;
       position: relative;
     }
@@ -41,41 +41,41 @@
       background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.25) 100%);
     }
 
-    header { 
-      text-align: center; 
-      padding: 2.5rem 1rem 1rem; 
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
     }
 
-    header img { 
-      width: 100%; 
-      max-width: 600px; 
-      height: auto; 
-      display: block; 
-      margin: 0 auto; 
+    header img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
-    nav { 
-      text-align: center; 
-      margin-top: 1rem; 
+    nav {
+      text-align: center;
+      margin-top: 1rem;
     }
 
-    nav a { 
-      margin: 0 1rem; 
-      text-decoration: none; 
-      color: #1f3d2c; 
-      font-weight: 600; 
-      border-bottom: 3px solid transparent; 
-      padding-bottom: 4px; 
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #1f3d2c;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      padding-bottom: 4px;
     }
 
-    nav a:hover { 
-      border-bottom: 3px solid #e8c84a; 
+    nav a:hover {
+      border-bottom: 3px solid #e8c84a;
     }
 
-    main { 
-      max-width: 900px; 
-      margin: 4rem auto; 
-      padding: 0 2rem; 
+    main {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
       text-align: center;
     }
 
@@ -89,14 +89,14 @@
       line-height: 1.6;
     }
 
-    h2 { 
-      border-bottom: 3px solid #e8c84a; 
-      display: inline-block; 
+    h2 {
+      border-bottom: 3px solid #e8c84a;
+      display: inline-block;
       margin-bottom: 1rem;
       padding-bottom: 4px;
     }
 
-    /* ⭐ Slideshow styling */
+    /* ⭐ EXACT slideshow styling from index page */
     .slideshow-box {
       padding: 2rem;
       border-radius: 10px;
@@ -108,36 +108,27 @@
     }
 
     .slideshow-container {
+      position: relative;
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
-      background: rgba(255,255,255,0.7);
-      border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    /* ⭐ FIX: let the slide expand naturally */
-    .commission-slide {
+    .slide {
       display: none;
       width: 100%;
     }
 
-    /* ⭐ FIX: image always fits inside padded frame */
-    .commission-slide img {
+    .slide img {
       width: 100%;
       height: auto;
-      max-height: 500px; /* prevents overflow */
       object-fit: contain;
       border-radius: 10px;
-      background: rgba(255,255,255,0.9);
-      padding: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    }
-
-    .fade {
-      animation-name: fade;
-      animation-duration: 2s;
+      display: block;
+      margin: 0 auto;
     }
 
     @keyframes fade {
@@ -145,10 +136,15 @@
       to { opacity: 1; }
     }
 
-    footer { 
-      text-align: center; 
-      padding: 3rem 1rem; 
-      font-size: 0.9rem; 
+    .fade {
+      animation-name: fade;
+      animation-duration: 2s;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -171,6 +167,7 @@
   </nav>
 
   <main>
+
     <div class="commissions-box">
       <h2>Commissions</h2>
       <p>I accept a limited number of commissions each year, including bespoke prints and oil paintings. If you have a particular place, person, or memory you’d like captured in print or paint, I’d be delighted to discuss ideas, sizes, and timelines.</p>
@@ -180,24 +177,25 @@
       </p>
     </div>
 
+    <!-- ⭐ EXACT slideshow structure from index page -->
     <div class="slideshow-box">
       <h2>Examples of Past Commission Work</h2>
 
       <div class="slideshow-container">
 
-        <div class="commission-slide fade">
+        <div class="slide fade">
           <img src="Emily and Alasdair wedding portrait.jpg" alt="Commission example 1">
         </div>
 
-        <div class="commission-slide fade">
+        <div class="slide fade">
           <img src="holiday commission.jpg" alt="Commission example 2">
         </div>
 
-        <div class="commission-slide fade">
+        <div class="slide fade">
           <img src="Alice and John wedding portrait.jpg" alt="Commission example 3">
         </div>
 
-        <div class="commission-slide fade">
+        <div class="slide fade">
           <img src="carol and frank portrait.jpg" alt="Commission example 4">
         </div>
 
@@ -209,18 +207,18 @@
   <footer>© 2026 Alice Croft Artist</footer>
 
   <script>
-    let commissionIndex = 0;
-    showCommissionSlides();
+    let slideIndex = 0;
+    showSlides();
 
-    function showCommissionSlides() {
-      let slides = document.getElementsByClassName("commission-slide");
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
-      commissionIndex++;
-      if (commissionIndex > slides.length) { commissionIndex = 1 }
-      slides[commissionIndex - 1].style.display = "block";
-      setTimeout(showCommissionSlides, 4000);
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
     }
   </script>
 
