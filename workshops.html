@@ -48,16 +48,96 @@
     header { text-align: center; padding: 2.5rem 1rem 1rem; }
     header img { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
 
-    nav { text-align: center; margin-top: 1rem; }
-    nav a { 
-      margin: 0 1rem; 
-      text-decoration: none; 
-      color: #1f3d2c; 
-      font-weight: 600; 
-      border-bottom: 3px solid transparent; 
-      padding-bottom: 4px; 
+    /* DESKTOP NAV */
+    nav.nav-desktop {
+      text-align: center;
+      margin-top: 1rem;
     }
-    nav a:hover { border-bottom: 3px solid #e8c84a; }
+
+    nav.nav-desktop a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #1f3d2c;
+      font-weight: 600;
+      border-bottom: 3px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    nav.nav-desktop a:hover {
+      border-bottom: 3px solid #e8c84a;
+    }
+
+    /* MOBILE HAMBURGER MENU */
+    .hamburger-wrapper {
+      display: none;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      width: 32px;
+      cursor: pointer;
+      margin: 0 auto;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: #1f3d2c;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    nav.nav-mobile {
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      background: rgba(250, 248, 242, 0.95);
+      padding: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.15);
+      margin-top: 1rem;
+    }
+
+    nav.nav-mobile a {
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      color: #1f3d2c;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    #menu-toggle:checked ~ nav.nav-mobile {
+      display: flex;
+    }
+
+    #menu-toggle:checked + .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #menu-toggle:checked + .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menu-toggle:checked + .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* MOBILE BREAKPOINT */
+    @media (max-width: 700px) {
+      nav.nav-desktop {
+        display: none;
+      }
+      .hamburger-wrapper {
+        display: block;
+      }
+    }
 
     main { 
       max-width: 900px; 
@@ -142,13 +222,13 @@
 <body>
 
   <header>
-  <a href="index.html">
-    <img src="logo.png" alt="Alice Croft Artist Logo">
-  </a>
-</header>
+    <a href="index.html">
+      <img src="logo.png" alt="Alice Croft Artist Logo">
+    </a>
+  </header>
 
-
-  <nav>
+  <!-- DESKTOP NAV -->
+  <nav class="nav-desktop">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="available-work.html">Available Work</a>
@@ -158,6 +238,27 @@
     <a href="commissions.html">Commissions</a>
     <a href="contact.html">Contact</a>
   </nav>
+
+  <!-- MOBILE HAMBURGER -->
+  <div class="hamburger-wrapper">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <nav class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="available-work.html">Available Work</a>
+      <a href="process.html">Process</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 
   <main>
     <div class="workshops-box">
