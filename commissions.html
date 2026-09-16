@@ -205,7 +205,7 @@
       color: #1f3d2c;
     }
 
-    /* ⭐ UPDATED SLIDESHOW RULES */
+    /* ⭐ UPDATED SLIDESHOW RULES — LANDSCAPE SAFE */
     .slideshow-container {
       position: relative;
       width: 100%;
@@ -214,8 +214,8 @@
       border-radius: 10px;
       overflow: hidden;
 
-      /* FIXED HEIGHT */
-      height: 350px;
+      /* TALLER HEIGHT SO LANDSCAPE IMAGES AREN'T CROPPED */
+      height: 420px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -230,7 +230,7 @@
     .slide img {
       max-height: 100%;
       width: auto;
-      object-fit: contain;
+      object-fit: contain; /* ensures full image is visible */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       margin: 0 auto;
