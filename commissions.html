@@ -40,11 +40,7 @@
       height: 100%;
       pointer-events: none;
       z-index: -1;
-      background: radial-gradient(
-        circle,
-        rgba(0,0,0,0) 60%,
-        rgba(0,0,0,0.25) 100%
-      );
+      background: radial-gradient(circle, rgba(0,0,0,0) 60%, rgba(0,0,0,0.25) 100%);
     }
 
     header { 
@@ -103,6 +99,51 @@
       padding-bottom: 4px;
     }
 
+    /* ⭐ Slideshow styling */
+    .slideshow-box {
+      padding: 2rem;
+      border-radius: 10px;
+      background: rgba(250, 248, 242, 0.60);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
+      margin-top: 3rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .commission-slide {
+      display: none;
+      width: 100%;
+    }
+
+    .commission-slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .fade {
+      animation-name: fade;
+      animation-duration: 2s;
+    }
+
+    @keyframes fade {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
     footer { 
       text-align: center; 
       padding: 3rem 1rem; 
@@ -137,9 +178,53 @@
         with a brief description of what you have in mind, your budget, and any deadlines.
       </p>
     </div>
+
+    <!-- ⭐ Slideshow starts here -->
+    <div class="slideshow-box">
+      <h2>Examples of Past Commission Work</h2>
+
+      <div class="slideshow-container">
+
+        <div class="commission-slide fade">
+          <img src="commission1.jpg" alt="Commission example 1">
+        </div>
+
+        <div class="commission-slide fade">
+          <img src="commission2.jpg" alt="Commission example 2">
+        </div>
+
+        <div class="commission-slide fade">
+          <img src="commission3.jpg" alt="Commission example 3">
+        </div>
+
+        <div class="commission-slide fade">
+          <img src="commission4.jpg" alt="Commission example 4">
+        </div>
+
+      </div>
+    </div>
+    <!-- ⭐ Slideshow ends here -->
+
   </main>
 
   <footer>© 2026 Alice Croft Artist</footer>
+
+  <!-- ⭐ Slideshow script -->
+  <script>
+    let commissionIndex = 0;
+    showCommissionSlides();
+
+    function showCommissionSlides() {
+      let slides = document.getElementsByClassName("commission-slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      commissionIndex++;
+      if (commissionIndex > slides.length) { commissionIndex = 1 }
+      slides[commissionIndex - 1].style.display = "block";
+      setTimeout(showCommissionSlides, 4000);
+    }
+  </script>
 
 </body>
 </html>
