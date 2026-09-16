@@ -211,6 +211,19 @@
       height: 24px;
       fill: #1f3d2c;
     }
+    /* Blurred-edge text box for page intro */
+.intro-box {
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgba(250, 248, 242, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
   </style>
 </head>
 
@@ -235,8 +248,10 @@
   </nav>
 
   <main>
-    <h2>Available Work</h2>
-    <p>Browse current pieces available for purchase. All of my work is limited edition, hand printed and signed.</p>
+   <div class="intro-box">
+  <h2>Available Work</h2>
+  <p>Browse current pieces available for purchase. All of my work is limited edition, hand printed and signed.</p>
+
 
     <div class="work-grid">
 
@@ -368,6 +383,8 @@
       </div>
 
     </div>
+   </div>
+  
 
     <!-- ⭐ Social media icons added here -->
     <div class="social-icons">
