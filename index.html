@@ -190,6 +190,7 @@
       transform: translateY(-2px);
     }
 
+    /* ⭐ UPDATED SLIDESHOW RULES */
     .slideshow-container {
       position: relative;
       width: 100%;
@@ -197,21 +198,28 @@
       margin: 0 auto;
       border-radius: 10px;
       overflow: hidden;
+
+      /* FIXED HEIGHT */
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .slide {
       display: none;
       width: 100%;
+      height: 100%;
     }
 
     .slide img {
-      width: 100%;
-      height: auto;
+      max-height: 100%;
+      width: auto;
       object-fit: contain;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      display: block;
       margin: 0 auto;
+      display: block;
     }
 
     @keyframes fade {
