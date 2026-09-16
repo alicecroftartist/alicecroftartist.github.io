@@ -110,30 +110,30 @@
     .slideshow-container {
       position: relative;
       width: 100%;
-      max-width: 500px;
+      max-width: 550px; /* ⭐ slightly wider frame */
       margin: 0 auto;
-      border-radius: 10px;
-      overflow: hidden;
+      border-radius: 12px;
+      padding: 1rem; /* ⭐ clean border space */
+      background: rgba(255,255,255,0.6); /* ⭐ soft frame */
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
     }
 
-    /* ⭐ FIX: remove fixed height so images never get cut off */
     .commission-slide {
       display: none;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 1rem 0;
     }
 
     .commission-slide img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain; /* uncropped */
+      object-fit: contain; /* ⭐ uncropped */
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      background: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.8);
       padding: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
 
     .fade {
