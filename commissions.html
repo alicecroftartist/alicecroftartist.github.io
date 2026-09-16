@@ -79,7 +79,9 @@
       text-align: center;
     }
 
-    .commissions-box {
+    .commissions-box,
+    .pricing-box,
+    .slideshow-box {
       padding: 2rem;
       border-radius: 10px;
       background: rgba(250, 248, 242, 0.60);
@@ -87,6 +89,7 @@
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
       line-height: 1.6;
+      margin-top: 3rem;
     }
 
     h2 {
@@ -96,7 +99,7 @@
       padding-bottom: 4px;
     }
 
-    /* ⭐ Email button */
+    /* Email button */
     .email-button {
       display: inline-block;
       margin-top: 1.8rem;
@@ -114,17 +117,24 @@
       transform: translateY(-2px);
     }
 
-    /* ⭐ Slideshow styling (identical to index page) */
-    .slideshow-box {
-      padding: 2rem;
-      border-radius: 10px;
-      background: rgba(250, 248, 242, 0.60);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
-      margin-top: 3rem;
+    /* Pricing table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
     }
 
+    th, td {
+      padding: 0.8rem;
+      border-bottom: 2px solid #e8c84a;
+    }
+
+    th {
+      font-weight: 700;
+      color: #1f3d2c;
+    }
+
+    /* Slideshow identical to index page */
     .slideshow-container {
       position: relative;
       width: 100%;
@@ -192,14 +202,48 @@
 
       <p>Contact me for information about commissions.</p>
 
-      <!-- ⭐ Email button added here -->
       <a class="email-button" href="mailto:alicecroftartist@gmail.com">
         Contact me via email
       </a>
-
     </div>
 
-    <!-- ⭐ Slideshow identical to index page -->
+    <!-- ⭐ Pricing section added -->
+    <div class="pricing-box">
+      <h2>Pricing</h2>
+
+      <table>
+        <tr>
+          <th>Medium</th>
+          <th>Maximum size available</th>
+          <th>Price per square inch</th>
+        </tr>
+
+        <tr>
+          <td>Oil painting</td>
+          <td>A0</td>
+          <td>£1.50</td>
+        </tr>
+
+        <tr>
+          <td>Solar plate etching</td>
+          <td>A2</td>
+          <td>£1.25</td>
+        </tr>
+
+        <tr>
+          <td>Single layer linocut</td>
+          <td>A2</td>
+          <td>£1.25</td>
+        </tr>
+
+        <tr>
+          <td>Reduction linocut</td>
+          <td>A3</td>
+          <td>Quote based on complexity/amount of colours</td>
+        </tr>
+      </table>
+    </div>
+
     <div class="slideshow-box">
       <h2>Examples of Past Commission Work</h2>
 
