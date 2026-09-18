@@ -109,7 +109,8 @@
       height: 100%;
     }
 
-    .slide img {
+    .slide img,
+    .slide video {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -177,7 +178,7 @@
   <div class="art-box">
     <h2>A gaggle of gregarious greylag geese</h2>
 
-    <!-- ⭐ Slideshow with placeholder images -->
+    <!-- ⭐ Slideshow with images + video -->
     <div class="slideshow-container">
 
       <div class="slide fade">
@@ -185,11 +186,19 @@
       </div>
 
       <div class="slide fade">
-        <img src="../PLACEHOLDER-IMAGE-2.jpg" alt="ARTWORK TITLE image 2">
+        <img src="geesevid.mp4" alt="A gaggle of gregarious greylag geese video">
       </div>
 
       <div class="slide fade">
-        <img src="../PLACEHOLDER-IMAGE-3.jpg" alt="ARTWORK TITLE image 3">
+        <video controls>
+          <source src="geese1.jpg" type="geese detail">
+        </video>
+      </div>
+
+       <div class="slide fade">
+        <video controls>
+          <source src="geese2.jpg" type="geese detail">
+        </video>
       </div>
 
     </div>
@@ -222,7 +231,7 @@
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); // 4 seconds per slide
+    setTimeout(showSlides, 4000);
   }
 </script>
 
