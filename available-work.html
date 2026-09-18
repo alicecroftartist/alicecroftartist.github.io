@@ -14,7 +14,6 @@
       position: relative;
     }
 
-    /* Background image with ~30% opacity */
     body::before {
       content: "";
       position: fixed;
@@ -33,7 +32,6 @@
     header { text-align: center; padding: 2.5rem 1rem 1rem; }
     header img { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
 
-    /* DESKTOP NAV */
     nav.nav-desktop {
       text-align: center;
       margin-top: 1rem;
@@ -52,7 +50,6 @@
       border-bottom: 3px solid #e8c84a;
     }
 
-    /* MOBILE HAMBURGER MENU */
     .hamburger-wrapper {
       display: none;
       text-align: center;
@@ -75,9 +72,7 @@
       transition: 0.3s ease;
     }
 
-    #menu-toggle {
-      display: none;
-    }
+    #menu-toggle { display: none; }
 
     nav.nav-mobile {
       display: none;
@@ -98,30 +93,21 @@
       font-weight: 600;
     }
 
-    #menu-toggle:checked ~ nav.nav-mobile {
-      display: flex;
-    }
+    #menu-toggle:checked ~ nav.nav-mobile { display: flex; }
 
     #menu-toggle:checked + .hamburger span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
     }
 
-    #menu-toggle:checked + .hamburger span:nth-child(2) {
-      opacity: 0;
-    }
+    #menu-toggle:checked + .hamburger span:nth-child(2) { opacity: 0; }
 
     #menu-toggle:checked + .hamburger span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* MOBILE BREAKPOINT */
     @media (max-width: 700px) {
-      nav.nav-desktop {
-        display: none;
-      }
-      .hamburger-wrapper {
-        display: block;
-      }
+      nav.nav-desktop { display: none; }
+      .hamburger-wrapper { display: block; }
     }
 
     main { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; line-height: 1.6; }
@@ -129,7 +115,6 @@
 
     footer { text-align: center; padding: 3rem 1rem; font-size: 0.9rem; }
 
-    /* UNIFORM GRID */
     .work-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -147,7 +132,6 @@
       position: relative;
     }
 
-    /* Hover zoom */
     .work-item img {
       max-height: 300px;
       width: auto;
@@ -161,24 +145,20 @@
       cursor: pointer;
     }
 
-    .work-item img:hover {
-      transform: scale(1.05);
-    }
+    .work-item img:hover { transform: scale(1.05); }
 
     .work-item p {
       margin-top: 0.5rem;
       font-weight: 600;
     }
 
-    /* Price label */
     .price-label {
       margin-top: 0.2rem;
       font-weight: 700;
       color: #1f3d2c;
     }
 
-    /* Etsy button */
-    .etsy-button {
+    .view-button {
       margin-top: 0.5rem;
       background: #e8c84a;
       padding: 8px 14px;
@@ -189,87 +169,16 @@
       transition: background 0.2s ease;
     }
 
-    .etsy-button:hover {
-      background: #d4b038;
-    }
+    .view-button:hover { background: #d4b038; }
 
-    /* SOLD OUT BADGE */
-    .sold-out-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #d9534f;
-      color: white;
-      padding: 6px 12px;
-      font-weight: 700;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      font-size: 0.9rem;
-    }
-
-    /* LOW STOCK BADGE */
-    .low-stock-badge {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #f0ad4e;
-      color: white;
-      padding: 6px 12px;
-      font-weight: 700;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      font-size: 0.9rem;
-    }
-
-    /* Responsive behaviour */
     @media (max-width: 900px) {
-      .work-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
-      .work-grid {
-        grid-template-columns: 1fr;
-      }
+      .work-grid { grid-template-columns: 1fr; }
     }
 
-    /* LIGHTBOX */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-
-    .lightbox:target {
-      display: flex;
-    }
-
-    .close-lightbox {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      font-size: 40px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* ⭐ Social media icon buttons */
     .social-icons {
       margin-top: 3rem;
       text-align: center;
@@ -300,7 +209,6 @@
       fill: #1f3d2c;
     }
 
-    /* Blurred-edge text box for page intro */
     .intro-box {
       padding: 2rem;
       border-radius: 10px;
@@ -318,14 +226,32 @@
 
 <body>
 
- <header>
+<header>
   <a href="index.html">
     <img src="logo.png" alt="Alice Croft Artist Logo">
   </a>
 </header>
 
-  <!-- DESKTOP NAV -->
-  <nav class="nav-desktop">
+<nav class="nav-desktop">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="available-work.html">Available Work</a>
+  <a href="process.html">Process</a>
+  <a href="workshops.html">Workshops</a>
+  <a href="exhibitions.html">Exhibitions</a>
+  <a href="commissions.html">Commissions</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="hamburger-wrapper">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav class="nav-mobile">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="available-work.html">Available Work</a>
@@ -335,165 +261,156 @@
     <a href="commissions.html">Commissions</a>
     <a href="contact.html">Contact</a>
   </nav>
+</div>
 
-  <!-- MOBILE HAMBURGER -->
-  <div class="hamburger-wrapper">
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-
-    <nav class="nav-mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="available-work.html">Available Work</a>
-      <a href="process.html">Process</a>
-      <a href="workshops.html">Workshops</a>
-      <a href="exhibitions.html">Exhibitions</a>
-      <a href="commissions.html">Commissions</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-
-  <main>
-   <div class="intro-box">
-  <h2>Available Work</h2>
-  <p>Browse current pieces available for purchase. All of my work is limited edition, hand printed and signed.</p>
-
+<main>
+  <div class="intro-box">
+    <h2>Available Work</h2>
+    <p>Browse current pieces available for purchase. All of my work is limited edition, hand printed and signed.</p>
 
     <div class="work-grid">
 
-      <div class="work-item low-stock">
-        <a href="#img1"><img src="A gaggle of gregarious greylag geese.jpg"></a>
+      <!-- ⭐ Each artwork now links to its page in /works/ -->
+      <!-- ⭐ I will generate all links automatically -->
+
+      <!-- A gaggle of gregarious greylag geese -->
+      <div class="work-item">
+        <img src="A gaggle of gregarious greylag geese.jpg">
         <p>"A gaggle of gregarious greylag geese"</p>
         <div class="price-label">£120</div>
-        <div class="low-stock-badge">Low Stock</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482449681/reflections-in-the-river-nidd-solar?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_8&logging_key=0da23e1e4d890522bc696ee8d6bb465fb60bf198%3A4482449681" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/A-gaggle-of-gregarious-greylag-geese.html">View Artwork →</a>
       </div>
 
+      <!-- A heron in the reeds -->
       <div class="work-item">
-        <a href="#img2"><img src="A heron in the reeds.jpg"></a>
+        <img src="A heron in the reeds.jpg">
         <p>"A heron in the reeds"</p>
         <div class="price-label">£70</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482459802/guardians-of-the-civic-hall-solar-plate?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&logging_key=1c2b92a298670ef80e6fc06c7e0eacbbb61640f7%3A4482459802" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/A-heron-in-the-reeds.html">View Artwork →</a>
       </div>
 
+      <!-- A hunter of jewels -->
       <div class="work-item">
-        <a href="#img3"><img src="A hunter of jewels.jpg"></a>
+        <img src="A hunter of jewels.jpg">
         <p>"A hunter of jewels"</p>
         <div class="price-label">£20</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482449046/impressions-of-kirkgate-markets-solar?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_7&logging_key=1aedb743401e9c2472be19818e29d25752746c99%3A4482449046" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/A-hunter-of-jewels.html">View Artwork →</a>
       </div>
 
-      <div class="work-item sold-out">
-        <a href="#img4"><img src="A picnic at Gordale scar, original pencil drawing.jpg"></a>
-        <p>"A picnic at Gordale scar", original pencil drawing</p>
-        <div class="sold-out-badge">Sold Out</div>
-      </div>
-
+      <!-- A picnic at Gordale scar -->
       <div class="work-item">
-        <a href="#img5"><img src="A picnic at Gordale scar.jpg"></a>
+        <img src="A picnic at Gordale scar.jpg">
         <p>"A picnic at Gordale Scar"</p>
         <div class="price-label">£70</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4532940387/a-picnic-at-gordale-scar-solar-plate?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_18&logging_key=e7ef02b4c5de29954df03c37b901c7da7af41ef8%3A4532940387" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/A-picnic-at-gordale-scar.html">View Artwork →</a>
       </div>
 
+      <!-- A view through the winter willow -->
       <div class="work-item">
-        <a href="#img6"><img src="A view through the winter willow.jpg"></a>
+        <img src="A view through the winter willow.jpg">
         <p>"A view through the winter willow"</p>
         <div class="price-label">£90</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482424981/a-view-through-the-winter-willow-chapel?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_11&logging_key=4d7f74df3ccb9b75978fd2cc013ff54ac70842f4%3A4482424981" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/A-view-through-the-winter-willow.html">View Artwork →</a>
       </div>
 
+      <!-- Curlews calling over Pateley Bridge -->
       <div class="work-item">
-        <a href="#img7"><img src="Curlews calling over Pateley Bridge.jpg"></a>
+        <img src="Curlews calling over Pateley Bridge.jpg">
         <p>"Curlews calling over Pateley Bridge"</p>
         <div class="price-label">£90</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482462152/curlews-calling-over-pateley-bridge?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_4&logging_key=eaf2a890de9dd6eb1522ae86ba82618fb6ec40ca%3A4482462152" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/Curlews-calling-over-pateley-bridge.html">View Artwork →</a>
       </div>
 
+      <!-- Guardians of the civic hall -->
       <div class="work-item">
-        <a href="#img8"><img src="Guardians of the civic hall.jpg"></a>
+        <img src="Guardians of the civic hall.jpg">
         <p>"Guardians of the Civic Hall"</p>
         <div class="price-label">£90</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482458100/guardians-of-the-civic-hall-solar-plate?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&logging_key=9217aaf263ce5c53b5b0aaff506afe60550cf593%3A4482458100" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/Guardians-of-the-civic-hall.html">View Artwork →</a>
       </div>
 
+      <!-- Impressions of Kirkgate Markets -->
       <div class="work-item">
-        <a href="#img9"><img src="Impressions of kirkgate markets.jpg"></a>
+        <img src="Impressions of kirkgate markets.jpg">
         <p>"Impressions of Kirkgate Markets"</p>
         <div class="price-label">£90</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482438829/impressions-of-kirkgate-markets-solar?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_9&logging_key=f64f94cd66f55a2aa4e318606802cddfe105e8fb%3A4482438829" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/Impressions-of-kirkgate-markets.html">View Artwork →</a>
       </div>
 
+      <!-- Reflections in the river Nidd -->
       <div class="work-item">
-        <a href="#img10"><img src="Reflections in the river Nidd.jpg"></a>
+        <img src="Reflections in the river Nidd.jpg">
         <p>"Reflections in the river Nidd"</p>
         <div class="price-label">£90</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482446961/reflections-in-the-river-nidd-solar?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_8&logging_key=18afb0ae5b6f2f0aa7d4ba16454bf13f801fae63%3A4482446961" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/Reflections-in-the-river-nidd.html">View Artwork →</a>
       </div>
 
+      <!-- Ribblehead Viaduct -->
       <div class="work-item">
-        <a href="#img11"><img src="Ribblehead Viaduct, monoprint.jpg"></a>
+        <img src="Ribblehead Viaduct, monoprint.jpg">
         <p>"Ribblehead Viaduct"</p>
         <div class="price-label">£100</div>
-        <div class="low-stock-badge">Last one!</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4575662145/ribblehead-viaduct-at-sunset-monotype?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&logging_key=0531f74890d292c58822ad7d94555ba47009c592%3A4575662145" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/Ribblehead-viaduct.html">View Artwork →</a>
       </div>
 
+      <!-- Spoonbills at sunset -->
       <div class="work-item">
-        <a href="#img12"><img src="Spoonbills at sunset.jpg"></a>
+        <img src="Spoonbills at sunset.jpg">
         <p>"Spoonbills at sunset"</p>
         <div class="price-label">£70</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4532948995/spoonbills-at-sunset-limited-edition?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_12&logging_key=de9d506a5522dd2870bcedf0bbf59e04921208b5%3A4532948995" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/Spoonbills-at-sunset.html">View Artwork →</a>
       </div>
 
+      <!-- The connoisseur of the garden -->
       <div class="work-item">
-        <a href="#img13"><img src="The connoisseur of the garden .jpg"></a>
+        <img src="The connoisseur of the garden .jpg">
         <p>"The connoisseur of the garden"</p>
         <div class="price-label">£20</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4482440318/a-view-through-the-winter-willow-solar?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_10&logging_key=a8825160e1408bb6d1b2669d71a173686b706d59%3A4482440318" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/The-connoisseur-of-the-garden.html">View Artwork →</a>
       </div>
 
+      <!-- The forgotten summerhouse -->
       <div class="work-item">
-        <a href="#img14"><img src="The forgotten summerhouse.jpg"></a>
+        <img src="The forgotten summerhouse.jpg">
         <p>"The forgotten summerhouse"</p>
         <div class="price-label">£120</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4532957646/the-forgotten-summerhouse-limited?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_14&logging_key=3efabab8baa0755e5806ea4b18a1d6e74547af12%3A4532957646" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/The-forgotten-summerhouse.html">View Artwork →</a>
       </div>
 
+      <!-- The gardens socialites -->
       <div class="work-item">
-        <a href="#img15"><img src="The gardens socialites.jpg"></a>
+        <img src="The gardens socialites.jpg">
         <p>"The gardens socialites"</p>
         <div class="price-label">£20</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4575667182/the-gardens-socialites?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&logging_key=e0b4ecb0fb0152d5eeda43b2745f46c4273a3085%3A4575667182" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/The-gardens-socialites.html">View Artwork →</a>
       </div>
 
+      <!-- The lone tree at Malham -->
       <div class="work-item">
-        <a href="#img16"><img src="The lone tree at Malham.JPG"></a>
+        <img src="The lone tree at Malham.JPG">
         <p>"The lone tree at Malham"</p>
         <div class="price-label">£70</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4532961272/the-lone-tree-at-malham-cove-limited?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_17&logging_key=3c36d6dec3e21c591b554a4a454f1088c8bf306d%3A4532961272" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/The-lone-tree-at-malham.html">View Artwork →</a>
       </div>
 
+      <!-- The lone tree at Malham, blue variant -->
       <div class="work-item">
-        <a href="#img17"><img src="The lone tree at Malham, blue variant.jpg"></a>
+        <img src="The lone tree at Malham, blue variant.jpg">
         <p>"The lone tree at Malham", blue variant</p>
         <div class="price-label">£90</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4575684094/the-lone-tree-at-malham-blue-variant?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&logging_key=c10b952dd7d3ae094db8962cf9f477dd9adb54e0%3A4575684094" target="_blank">Buy on Etsy</a>
+        <a class="view-button" href="works/The-lone-tree-at-malham-blue-variant.html">View Artwork →</a>
       </div>
 
+      <!-- Hand printed names -->
       <div class="work-item">
-        <a href="#img18"><img src="Hand printed names with animal inspired letters.jpg"></a>
-        <p>Hand printed names with animal inspired letters, available in any colour or combination</p>
+        <img src="Hand printed names with animal inspired letters.jpg">
+        <p>Hand printed names with animal inspired letters</p>
         <div class="price-label">Price dependant on quantity of letters</div>
-        <a class="etsy-button" href="https://www.etsy.com/uk/listing/4548097675/hand-printed-names-with-animal-inspired?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_15&logging_key=0b4b4a72b925c8d7bfedef8768e6b51a2a73c914%3A4548097675">Buy on Etsy</a>
+        <a class="view-button" href="works/Hand-printed-names.html">View Artwork →</a>
       </div>
 
     </div>
-   </div>
+  
   
 
     <!-- ⭐ Social media icons added here -->
@@ -526,25 +443,7 @@
 
   <footer>© 2026 Alice Croft Artist</footer>
 
-  <!-- LIGHTBOXES -->
-  <div id="img1" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="A gaggle of gregarious greylag geese.jpg"></div>
-  <div id="img2" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="A heron in the reeds.jpg"></div>
-  <div id="img3" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="A hunter of jewels.jpg"></div>
-  <div id="img4" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="A picnic at Gordale scar, original pencil drawing.jpg"></div>
-  <div id="img5" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="A picnic at Gordale scar.jpg"></div>
-  <div id="img6" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="A view through the winter willow.jpg"></div>
-  <div id="img7" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Curlews calling over Pateley Bridge.jpg"></div>
-  <div id="img8" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Guardians of the civic hall.jpg"></div>
-  <div id="img9" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Impressions of kirkgate markets.jpg"></div>
-  <div id="img10" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Reflections in the river Nidd.jpg"></div>
-  <div id="img11" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Ribblehead Viaduct, monoprint.jpg"></div>
-  <div id="img12" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Spoonbills at sunset.jpg"></div>
-  <div id="img13" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="The connoisseur of the garden .jpg"></div>
-  <div id="img14" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="The forgotten summerhouse.jpg"></div>
-  <div id="img15" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="The gardens socialites.jpg"></div>
-  <div id="img16" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="The lone tree at Malham.JPG"></div>
-  <div id="img17" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="The lone tree at Malham, blue variant.jpg"></div>
-  <div id="img18" class="lightbox"><a class="close-lightbox" href="#">×</a><img src="Hand printed names with animal inspired letters.jpg"></div>
+
 
 </body>
 </html>
