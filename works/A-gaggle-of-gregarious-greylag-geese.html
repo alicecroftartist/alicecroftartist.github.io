@@ -101,6 +101,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      touch-action: pan-y;
     }
 
     .slide {
@@ -118,6 +119,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       display: block;
       margin: 0 auto;
+      cursor: pointer;
     }
 
     /* Manual slideshow arrows */
@@ -136,16 +138,41 @@
       transition: background 0.2s ease;
     }
 
-    .prev {
-      left: 10px;
-    }
-
-    .next {
-      right: 10px;
-    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
 
     .prev:hover, .next:hover {
       background: #e8c84a;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox img,
+    #lightbox video {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
     }
 
     .buy-button {
@@ -196,34 +223,33 @@
   <div class="art-box">
     <h2>A gaggle of gregarious greylag geese</h2>
 
-    <!-- ⭐ Manual slideshow -->
-    <div class="slideshow-container">
+    <!-- ⭐ Manual slideshow with enlarge + swipe -->
+    <div class="slideshow-container" id="slideshow">
 
       <div class="slide fade">
-        <img src="../A gaggle of gregarious greylag geese.jpg" alt="A gaggle of gregarious greylag geese">
+        <img src="../A gaggle of gregarious greylag geese.jpg" alt="A gaggle of gregarious greylag geese" onclick="openLightbox(this)">
       </div>
 
       <div class="slide fade">
-        <img src="../geeseone.jpg" alt="geeseone">
+        <img src="../geeseone.jpg" alt="geeseone" onclick="openLightbox(this)">
       </div>
 
       <div class="slide fade">
-        <video controls>
+        <video controls onclick="openLightbox(this)">
           <source src="../geesevid.mp4" type="video/mp4">
         </video>
       </div>
 
       <div class="slide fade">
-        <img src="../geesetwo.jpg" alt="geesetwo">
+        <img src="../geesetwo.jpg" alt="geesetwo" onclick="openLightbox(this)">
       </div>
 
-      <!-- Manual controls -->
       <a class="prev" onclick="plusSlides(-1)">❮</a>
       <a class="next" onclick="plusSlides(1)">❯</a>
 
     </div>
 
-    <p>"A gaggle of gregarious greylag geese" depicts some mischevious geese I saw poking their heads out from a barley field on a sunset walk this summer. When I saw their comical expressions I could not resist immortalising them in print.</p>
+    <p>"A gaggle of gregarious greylag geese" depicts some mischevious geese I saw poking their heads out from a barley field on a sunset walk this summer.</p>
 
     <p><strong>Price: £120</strong></p>
 
@@ -238,6 +264,12 @@
 </main>
 
 <footer>© 2026 Alice Croft Artist</footer>
+
+<!-- ⭐ Lightbox -->
+<div id="lightbox">
+  <span id="lightbox-close" onclick="closeLightbox()">×</span>
+  <div id="lightbox-content"></div>
+</div>
 
 <script>
   let slideIndex = 1;
@@ -256,6 +288,36 @@
     }
     slides[slideIndex - 1].style.display = "block";
   }
+
+  /* ⭐ Click-to-enlarge */
+  function openLightbox(el) {
+    const box = document.getElementById("lightbox");
+    const content = document.getElementById("lightbox-content");
+    content.innerHTML = "";
+    const clone = el.cloneNode(true);
+    clone.style.maxWidth = "90%";
+    clone.style.maxHeight = "90%";
+    content.appendChild(clone);
+    box.style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  /* ⭐ Swipe support */
+  let startX = 0;
+  const slideshow = document.getElementById("slideshow");
+
+  slideshow.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  slideshow.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) plusSlides(1);      // swipe left
+    if (endX - startX > 50) plusSlides(-1);     // swipe right
+  });
 </script>
 
 </body>
