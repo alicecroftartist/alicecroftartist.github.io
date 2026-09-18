@@ -120,14 +120,28 @@
       margin: 0 auto;
     }
 
-    @keyframes fade {
-      from { opacity: 0.2; }
-      to { opacity: 1; }
+    /* Manual slideshow buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      padding: 12px;
+      margin-top: -22px;
+      color: #1f3d2c;
+      font-weight: bold;
+      font-size: 24px;
+      background: rgba(250, 248, 242, 0.7);
+      border-radius: 4px;
+      user-select: none;
+      transition: background 0.2s ease;
     }
 
-    .fade {
-      animation-name: fade;
-      animation-duration: 2s;
+    .next {
+      right: 0;
+    }
+
+    .prev:hover, .next:hover {
+      background: #e8c84a;
     }
 
     .buy-button {
@@ -178,29 +192,32 @@
   <div class="art-box">
     <h2>A gaggle of gregarious greylag geese</h2>
 
-    <!-- ⭐ Slideshow with images + video (MAIN FOLDER PATHS) -->
-<div class="slideshow-container">
+    <!-- ⭐ Manual slideshow -->
+    <div class="slideshow-container">
 
-  <div class="slide fade">
-    <img src="../A gaggle of gregarious greylag geese.jpg" alt="A gaggle of gregarious greylag geese">
-  </div>
+      <div class="slide fade">
+        <img src="../A gaggle of gregarious greylag geese.jpg" alt="A gaggle of gregarious greylag geese">
+      </div>
 
-  <div class="slide fade">
-    <img src="../geeseone.jpg" alt="geeseone">
-  </div>
+      <div class="slide fade">
+        <img src="../geeseone.jpg" alt="geeseone">
+      </div>
 
-  <div class="slide fade">
-    <video controls>
-      <source src="../geesevid.mp4" type="video/mp4">
-    </video>
-  </div>
+      <div class="slide fade">
+        <video controls>
+          <source src="../geesevid.mp4" type="video/mp4">
+        </video>
+      </div>
 
-  <div class="slide fade">
-    <img src="../geesetwo.jpg" alt="geesetwo">
-  </div>
+      <div class="slide fade">
+        <img src="../geesetwo.jpg" alt="geesetwo">
+      </div>
 
-</div>
+      <!-- Manual controls -->
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
 
+    </div>
 
     <p>"A gaggle of gregarious greylag geese" depicts some mischevious geese I saw poking their heads out from a barley field on a sunset walk this summer. When I saw their comical expressions I could not resist immortalising them in print.</p>
 
@@ -219,18 +236,21 @@
 <footer>© 2026 Alice Croft Artist</footer>
 
 <script>
-  let slideIndex = 0;
-  showSlides();
+  let slideIndex = 1;
+  showSlides(slideIndex);
 
-  function showSlides() {
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function showSlides(n) {
     const slides = document.getElementsByClassName("slide");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000);
   }
 </script>
 
