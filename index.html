@@ -172,23 +172,25 @@
       padding-bottom: 4px;
     }
 
-    .mailing-button {
-      display: inline-block;
-      margin-top: 1.8rem;
-      margin-bottom: 2rem;
-      padding: 0.9rem 1.6rem;
-      background: #e8c84a;
-      color: #1f3d2c;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
+    .shop-button,
+.mailing-button {
+display: inline-block;
+padding: 0.9rem 1.6rem;
+background: #e8c84a;
+color: #1f3d2c;
+font-weight: 600;
+text-decoration: none;
+border-radius: 8px;
+transition: background 0.2s ease, transform 0.2s ease;
+margin: 0;
+}
 
-    .mailing-button:hover {
-      background: #d4b43f;
-      transform: translateY(-2px);
-    }
+.shop-button:hover,
+.mailing-button:hover {
+background: #d4b43f;
+transform: translateY(-2px);
+}
+``
 
     /* ⭐ UPDATED SLIDESHOW RULES */
     .slideshow-container {
@@ -278,23 +280,23 @@ margin-bottom: 2rem;
  
 .shop-button,
 .mailing-button {
-margin: 0;
-}
-    .shop-button {
 display: inline-block;
 padding: 0.9rem 1.6rem;
-background: #1f3d2c;
-color: #faf8f2;
+background: #e8c84a;
+color: #1f3d2c;
 font-weight: 600;
 text-decoration: none;
 border-radius: 8px;
 transition: background 0.2s ease, transform 0.2s ease;
+margin: 0;
 }
- 
-.shop-button:hover {
-background: #2b523c;
+
+.shop-button:hover,
+.mailing-button:hover {
+background: #d4b43f;
 transform: translateY(-2px);
 }
+``
   </style>
 </head>
 
