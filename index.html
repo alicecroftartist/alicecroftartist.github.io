@@ -151,12 +151,6 @@
     max-width: 95%;
   }
 
-  /* Bigger slideshow on mobile */
-  .slideshow-container {
-    height: 500px;
-  }
-}
-
     main {
       max-width: 900px;
       margin: 4rem auto;
@@ -201,19 +195,30 @@ background: #d4b43f;
 transform: translateY(-2px);
 }
 
-    /* ⭐ UPDATED SLIDESHOW RULES */
-   .slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 10px;
-  overflow: hidden;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+ .slideshow-box {
+      padding: 2rem;
+      border-radius: 10px;
+      background: rgba(250, 248, 242, 0.60);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
+      line-height: 1.6;
+      margin-top: 3rem;
+    }
+
+ .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      border-radius: 10px;
+      overflow: hidden;
+
+      height: 350px; /* SAME AS INDEX PAGE */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
     .slide {
       display: none;
@@ -222,13 +227,13 @@ transform: translateY(-2px);
     }
 
     .slide img {
-      max-height: 100%;
-      width: auto;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* SAME AS INDEX PAGE */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      margin: 0 auto;
       display: block;
+      margin: 0 auto;
     }
 
     @keyframes fade {
