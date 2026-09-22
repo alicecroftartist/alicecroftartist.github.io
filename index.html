@@ -267,6 +267,34 @@
       padding: 3rem 1rem;
       font-size: 0.9rem;
     }
+    .button-row {
+display: flex;
+justify-content: center;
+gap: 1rem;
+flex-wrap: wrap;
+margin-top: 1.8rem;
+margin-bottom: 2rem;
+}
+ 
+.shop-button,
+.mailing-button {
+margin: 0;
+}
+    .shop-button {
+display: inline-block;
+padding: 0.9rem 1.6rem;
+background: #1f3d2c;
+color: #faf8f2;
+font-weight: 600;
+text-decoration: none;
+border-radius: 8px;
+transition: background 0.2s ease, transform 0.2s ease;
+}
+ 
+.shop-button:hover {
+background: #2b523c;
+transform: translateY(-2px);
+}
   </style>
 </head>
 
@@ -314,17 +342,22 @@
   <main>
 
     <div class="welcome-box">
-      <h2>Handmade reduction linocut prints, etchings and oil paintings inspired by nature, wildlife and the Yorkshire landscape.</h2>
-      <p>Based in Leeds, I create original reduction linocut prints, etchings and oil
-paintings. Read more <a href="about.html">here</a>.</p>
+      <h2>Handmade prints and paintings inspired by the Yorkshire landscape</h2>
+      <p>Based in Leeds, I create original reduction linocut prints, etchings and oil paintings inspired by beautiful Yorkshire landscapes. Read more <a href="about.html">here</a>.</p>
 
-      <a class="shop-button" href="available-work.html">
+     <div class="button-row">
+ 
+<a class="shop-button" href="available-work.html">
 View Available Artwork
 </a>
-
-      <a class="mailing-button" href="https://forms.gle/7FQ22RmtssEnxxMi8" target="_blank">
-        Sign up to my mailing list for exclusive content and offers
-      </a>
+ 
+<a class="mailing-button"
+href="https://forms.gle/7FQ22RmtssEnxxMi8"
+target="_blank">
+Join My Mailing List for Exclusive Content and Offers
+</a>
+ 
+</div>
 
       <div class="slideshow-container">
 
