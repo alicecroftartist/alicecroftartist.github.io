@@ -137,15 +137,25 @@
       transform: rotate(-45deg) translate(6px, -6px);
     }
 
-    /* MOBILE BREAKPOINT */
     @media (max-width: 700px) {
-      nav.nav-desktop {
-        display: none;
-      }
-      .hamburger-wrapper {
-        display: block;
-      }
-    }
+  nav.nav-desktop {
+    display: none;
+  }
+
+  .hamburger-wrapper {
+    display: block;
+  }
+
+  /* Bigger logo on mobile */
+  header img {
+    max-width: 95%;
+  }
+
+  /* Bigger slideshow on mobile */
+  .slideshow-container {
+    height: 500px;
+  }
+}
 
     main {
       max-width: 900px;
