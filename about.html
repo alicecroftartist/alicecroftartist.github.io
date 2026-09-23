@@ -168,6 +168,36 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
     }
+    .about-box::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.about-text {
+  text-align: left;
+}
+
+.about-photo {
+  float: left;
+  width: 38%;
+  max-width: 280px;
+  height: auto;
+  margin: 0.4rem 1.75rem 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Stack the photograph above the text on mobile */
+@media (max-width: 700px) {
+  .about-photo {
+    float: none;
+    display: block;
+    width: 85%;
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
+  }
+}
 
     /* Social icons */
     .social-icons {
@@ -252,17 +282,26 @@
   <main>
 
     <div class="about-box">
-      <h2>Hi, I'm Alice!</h2>
+  <h2>Hi, I'm Alice!</h2>
 
-      <p>I spent the last 14 years of my life training to become a GP, only to find that my real passion is making art! I've always created artwork as a hobby, but I started taking things a bit more seriously early in 2026 when I bought a second-hand etching press. I haven't looked back since, and I now love spending my days making beautiful prints.</p>
+  <div class="about-text">
 
-      <p>My work primarily explores Yorkshire landscapes and the animals living within them. I have been a keen bird watcher for my whole life, and this has definitely shown through in my art practice. I like to spend my weekends walking in the Yorkshire countryside with my husband, who doesn't mind too much when I stop every two minutes to try and find an interesting bird that flew into a nearby bush. Sometimes I think he might even be interested, and I am definitely converting him into a fellow bird enthusiast!</p>
+    <img
+      class="about-photo"
+      src="summerhouse.jpg"
+      alt="Portrait of Alice Croft"
+    >
 
-      <p>My favourite printmaking technique is reduction linocut. I love the depth of colour I can achieve and I'm a sucker for the challenge and jeopardy that comes with knowing you could ruin your print at any moment if it doesn't line up properly! I also frequently experiment with solar plate etching, which I use to make architectural prints of the beautiful buildings in Leeds. I also offer commissions, ranging from prints to oil paintings and portraiture.</p>
-    
-      <p>When I am not doing art related things, I am a keen badminton player and also play underwater hockey!</p>
-    </div>
+    <p>I spent the last 14 years of my life training to become a GP, only to find that my real passion is making art! I've always created artwork as a hobby, but I started taking things a bit more seriously early in 2026 when I bought a second-hand etching press. I haven't looked back since, and I now love spending my days making beautiful prints.</p>
 
+    <p>My work primarily explores Yorkshire landscapes and the animals living within them. I have been a keen bird watcher for my whole life, and this has definitely shown through in my art practice. I like to spend my weekends walking in the Yorkshire countryside with my husband, who doesn't mind too much when I stop every two minutes to try and find an interesting bird that flew into a nearby bush. Sometimes I think he might even be interested, and I am definitely converting him into a fellow bird enthusiast!</p>
+
+    <p>My favourite printmaking technique is reduction linocut. I love the depth of colour I can achieve and I'm a sucker for the challenge and jeopardy that comes with knowing you could ruin your print at any moment if it doesn't line up properly! I also frequently experiment with solar plate etching, which I use to make architectural prints of the beautiful buildings in Leeds. I also offer commissions, ranging from prints to oil paintings and portraiture.</p>
+
+    <p>When I am not doing art-related things, I am a keen badminton player and also play underwater hockey!</p>
+
+  </div>
+</div>
     <div class="social-icons">
 
       <a href="https://www.instagram.com/alice_croft_art/" target="_blank">
