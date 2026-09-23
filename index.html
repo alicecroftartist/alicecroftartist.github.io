@@ -308,6 +308,23 @@ margin: 0;
 background: #d4b43f;
 transform: translateY(-2px);
 }
+    .desktop-heading {
+display: block;
+}
+ 
+.mobile-heading {
+display: none;
+}
+ 
+@media (max-width: 700px) {
+.desktop-heading {
+display: none;
+}
+ 
+.mobile-heading {
+display: block;
+}
+}
   </style>
 </head>
 
@@ -355,9 +372,15 @@ transform: translateY(-2px);
   <main>
 
     <div class="welcome-box">
-    <img src="frontpageheading.png"
-     alt="frontpageheading"
-     style="width:95%;max-width:850px;height:auto;margin-bottom:1.5rem;">
+   <img src="frontpageheading.png"
+alt="Original Yorkshire-inspired linocut prints, etchings and oil paintings"
+class="desktop-heading"
+style="width:95%;max-width:850px;height:auto;margin-bottom:1.5rem;">
+ 
+<img src="mobileheading.png"
+alt="Original Yorkshire-inspired linocut prints, etchings and oil paintings"
+class="mobile-heading"
+style="width:95%;height:auto;margin-bottom:1.5rem;">
       <p>Browse original artwork inspired by Yorkshire's landscapes and wildlife. Each print and painting is created by hand in my Leeds studio and available in limited editions. Read more about me <a href="about.html">here</a>.</p>
 
      <div class="button-row">
