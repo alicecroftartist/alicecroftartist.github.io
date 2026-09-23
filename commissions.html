@@ -144,9 +144,31 @@
     padding: 1.25rem 0.75rem;
   }
 
+  .table-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.75rem auto 0;
+    padding: 0.55rem 0.75rem;
+    max-width: max-content;
+    color: #1f3d2c;
+    background: rgba(232, 200, 74, 0.28);
+    border: 1px solid #e8c84a;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .table-scroll-hint span {
+    color: #1f3d2c;
+    font-size: 1.1rem;
+  }
+
   .table-wrapper {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: scroll;
+    padding-bottom: 0.5rem;
   }
 
   .pricing-table {
@@ -210,6 +232,58 @@
   margin: 1.5rem auto 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.pricing-table {
+  width: 100%;
+  min-width: 650px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 0.8rem;
+  border-bottom: 2px solid #e8c84a;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.pricing-table th {
+  color: #1f3d2c;
+  font-weight: 700;
+}
+    .table-scroll-hint {
+  display: none;
+}
+
+.table-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem auto 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: #e8c84a rgba(250, 248, 242, 0.8);
+  scrollbar-width: thin;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: rgba(250, 248, 242, 0.8);
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #e8c84a;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #d4b43f;
 }
 
 .pricing-table {
@@ -369,7 +443,13 @@
     <div class="pricing-box">
       <h2>Pricing</h2>
 
-    <div class="table-wrapper">
+<div class="table-scroll-hint" aria-hidden="true">
+  <span>←</span>
+  Swipe sideways to view the full table
+  <span>→</span>
+</div>
+
+<div class="table-wrapper">
   <table class="pricing-table">
     <thead>
       <tr>
@@ -393,7 +473,7 @@
       </tr>
 
       <tr>
-        <td>Single layer linocut</td>
+        <td>Single-layer linocut</td>
         <td>A2</td>
         <td>£1.25</td>
       </tr>
