@@ -188,21 +188,32 @@
       transform: translateY(-2px);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.5rem;
-    }
+   .table-wrapper {
+  width: 100%;
+  margin: 1.5rem auto 0;
+  overflow-x: auto;
+}
 
-    th, td {
-      padding: 0.8rem;
-      border-bottom: 2px solid #e8c84a;
-    }
+.pricing-table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
 
-    th {
-      font-weight: 700;
-      color: #1f3d2c;
-    }
+.pricing-table th,
+.pricing-table td {
+  padding: 0.8rem;
+  border-bottom: 2px solid #e8c84a;
+  text-align: center;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.pricing-table th {
+  color: #1f3d2c;
+  font-weight: 700;
+}
 
     /* ⭐ MATCHES INDEX PAGE SLIDESHOW */
     .slideshow-container {
@@ -340,37 +351,43 @@
     <div class="pricing-box">
       <h2>Pricing</h2>
 
-      <table>
-        <tr>
-          <th>Medium</th>
-          <th>Maximum size available</th>
-          <th>Price per square inch</th>
-        </tr>
+    <div class="table-wrapper">
+  <table class="pricing-table">
+    <thead>
+      <tr>
+        <th>Medium</th>
+        <th>Maximum size available</th>
+        <th>Price per square inch</th>
+      </tr>
+    </thead>
 
-        <tr>
-          <td>Oil painting</td>
-          <td>A0</td>
-          <td>£1.50</td>
-        </tr>
+    <tbody>
+      <tr>
+        <td>Oil painting</td>
+        <td>A0</td>
+        <td>£1.50</td>
+      </tr>
 
-        <tr>
-          <td>Solar plate etching</td>
-          <td>A2</td>
-          <td>£1.25</td>
-        </tr>
+      <tr>
+        <td>Solar plate etching</td>
+        <td>A2</td>
+        <td>£1.25</td>
+      </tr>
 
-        <tr>
-          <td>Single layer linocut</td>
-          <td>A2</td>
-          <td>£1.25</td>
-        </tr>
+      <tr>
+        <td>Single layer linocut</td>
+        <td>A2</td>
+        <td>£1.25</td>
+      </tr>
 
-        <tr>
-          <td>Reduction linocut</td>
-          <td>A3</td>
-          <td>Quote based on complexity/amount of colours</td>
-        </tr>
-      </table>
+      <tr>
+        <td>Reduction linocut</td>
+        <td>A3</td>
+        <td>Quote based on complexity and number of colours</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
       <p>For example, A4 paper is 93.5 square inches, making an oil painting £139.50. However, if this painting included several faces or complex elements, this price may be increased to account for this.</p>
       <p>I will always advise you which medium I believe is best and provide an accurate quote upon consultation.</p>
