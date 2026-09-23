@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Alice Croft | Original Linocut Prints, Etchings &amp; Oil Paintings</title>
+  <title>
+    Alice Croft | Original Linocut Prints, Etchings &amp; Oil Paintings
+  </title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,8 +22,7 @@
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       background-image: url("field.jpg");
@@ -36,8 +37,7 @@
     body::after {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
@@ -54,15 +54,11 @@
       padding: 2.5rem 1rem 1rem;
     }
 
-    header a {
-      display: block;
-    }
-
     header img {
+      display: block;
       width: 100%;
       max-width: 600px;
       height: auto;
-      display: block;
       margin: 0 auto;
     }
 
@@ -82,7 +78,7 @@
     }
 
     nav.nav-desktop a:hover {
-      border-bottom: 3px solid #e8c84a;
+      border-bottom-color: #e8c84a;
     }
 
     /* Mobile hamburger menu */
@@ -100,14 +96,14 @@
       display: flex;
       flex-direction: column;
       width: 32px;
-      cursor: pointer;
       margin: 0 auto;
+      cursor: pointer;
     }
 
     .hamburger span {
       height: 4px;
-      background: #1f3d2c;
       margin: 5px 0;
+      background: #1f3d2c;
       border-radius: 2px;
       transition: 0.3s ease;
     }
@@ -115,20 +111,20 @@
     nav.nav-mobile {
       display: none;
       flex-direction: column;
+      margin-top: 1rem;
+      padding: 1rem 0;
       text-align: center;
       background: rgba(250, 248, 242, 0.95);
-      padding: 1rem 0;
       border-radius: 10px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-      margin-top: 1rem;
     }
 
     nav.nav-mobile a {
       padding: 1rem 0;
-      font-size: 1.2rem;
       color: #1f3d2c;
-      text-decoration: none;
+      font-size: 1.2rem;
       font-weight: 600;
+      text-decoration: none;
     }
 
     #menu-toggle:checked ~ nav.nav-mobile {
@@ -155,14 +151,14 @@
     }
 
     .welcome-box {
+      margin-bottom: 3rem;
       padding: 2rem;
-      border-radius: 10px;
+      line-height: 1.6;
       background: rgba(250, 248, 242, 0.60);
+      border-radius: 10px;
+      box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
-      line-height: 1.6;
-      margin-bottom: 3rem;
     }
 
     h2 {
@@ -172,23 +168,29 @@
       border-bottom: 3px solid #e8c84a;
     }
 
-    /* Separate desktop and mobile headings */
-    .desktop-heading {
-      display: block;
+    /*
+      Separate heading images.
+
+      Desktop displays the desktop image and hides the mobile image.
+      Mobile reverses this in the media query below.
+    */
+    #desktop-heading {
+      display: block !important;
       width: 95%;
       max-width: 850px;
       height: auto;
       margin: 0 auto 1.5rem;
     }
 
-    .mobile-heading {
-      display: none;
+    #mobile-heading {
+      display: none !important;
       width: 100%;
+      max-width: 520px;
       height: auto;
       margin: 0 auto 1.5rem;
     }
 
-    /* Main buttons */
+    /* Button row */
     .button-row {
       display: flex;
       justify-content: center;
@@ -200,17 +202,17 @@
 
     .shop-button,
     .mailing-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-block;
       margin: 0;
       padding: 0.9rem 1.6rem;
-      background: #e8c84a;
       color: #1f3d2c;
+      background: #e8c84a;
       font-weight: 600;
       text-decoration: none;
       border-radius: 8px;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .shop-button:hover,
@@ -219,18 +221,21 @@
       transform: translateY(-2px);
     }
 
-    /* Slideshow */
+    /*
+      Automatic slideshow.
+
+      The container stays at a fixed size.
+      object-fit: contain ensures landscape images remain fully visible
+      without cutting off either side.
+    */
     .slideshow-container {
       position: relative;
       width: 100%;
       max-width: 500px;
       height: 350px;
       margin: 0 auto;
-      border-radius: 10px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: 10px;
     }
 
     .slide {
@@ -243,9 +248,9 @@
       display: block;
       width: 100%;
       height: 100%;
+      margin: 0 auto;
       object-fit: contain;
       object-position: center;
-      margin: 0 auto;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
     }
@@ -265,11 +270,11 @@
       animation-duration: 2s;
     }
 
-    /* Social-media icon buttons */
+    /* Social media buttons */
     .social-icons {
       margin-top: 3rem;
-      text-align: center;
       padding: 1.5rem 0;
+      text-align: center;
     }
 
     .social-icons a {
@@ -282,7 +287,9 @@
       background: #e8c84a;
       border-radius: 50%;
       text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .social-icons a:hover {
@@ -297,13 +304,13 @@
     }
 
     footer {
-      text-align: center;
       padding: 3rem 1rem;
+      text-align: center;
       font-size: 0.9rem;
     }
 
-    /* Mobile version */
-    @media (max-width: 700px) {
+    /* Mobile layout */
+    @media screen and (max-width: 700px) {
       nav.nav-desktop {
         display: none;
       }
@@ -312,17 +319,20 @@
         display: block;
       }
 
-      header {
-        padding: 1.5rem 0.5rem 0.5rem;
+      header img {
+        max-width: 95%;
       }
 
-      header img {
-        width: 96vw;
-        max-width: none;
+      #desktop-heading {
+        display: none !important;
+      }
+
+      #mobile-heading {
+        display: block !important;
       }
 
       main {
-        margin: 2rem auto;
+        margin: 2.5rem auto;
         padding: 0 1rem;
       }
 
@@ -330,48 +340,31 @@
         padding: 1.25rem;
       }
 
-      .desktop-heading {
-        display: none;
-      }
-
-      .mobile-heading {
-        display: block;
-        width: 100%;
-        max-width: 500px;
-      }
-
+      /*
+        Remains contained on mobile so landscape images are not
+        cropped horizontally.
+      */
       .slideshow-container {
         width: 100%;
         max-width: 100%;
-        height: 420px;
+        height: 350px;
       }
 
       .slide img {
         width: 100%;
         height: 100%;
-        max-width: 100%;
         object-fit: contain;
         object-position: center;
       }
-    }
 
-    @media (max-width: 450px) {
       .button-row {
-        gap: 0.8rem;
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .shop-button,
       .mailing-button {
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      .slideshow-container {
-        height: 380px;
-      }
-
-      .social-icons a {
-        margin: 0 0.4rem;
+        width: auto;
       }
     }
   </style>
@@ -381,7 +374,7 @@
 
   <header>
     <a href="index.html">
-      <img src="logo.png" alt="Alice Croft Artist Logo">
+      <img src="logo.png" alt="Alice Croft Artist logo">
     </a>
   </header>
 
@@ -397,15 +390,11 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- Mobile hamburger menu -->
+  <!-- Mobile hamburger navigation -->
   <div class="hamburger-wrapper">
     <input type="checkbox" id="menu-toggle">
 
-    <label
-      for="menu-toggle"
-      class="hamburger"
-      aria-label="Open navigation menu"
-    >
+    <label for="menu-toggle" class="hamburger" aria-label="Open navigation menu">
       <span></span>
       <span></span>
       <span></span>
@@ -427,24 +416,19 @@
 
     <div class="welcome-box">
 
-      <!-- Desktop heading -->
-      <img
-        src="frontpageheading.png"
-        alt="Original Yorkshire-inspired linocut prints, etchings and oil paintings"
-        class="desktop-heading"
-      >
+      <!--
+        Replace DESKTOP-HEADING-FILENAME.png with frontpageheading.png.
 
-      <!-- Mobile heading -->
-      <img
-        src="mobileheading.png"
-        alt="Original Yorkshire-inspired linocut prints, etchings and oil paintings"
-        class="mobile-heading"
-      >
+        Replace MOBILE-HEADING-FILENAME.png with mobileheading.png.
+      -->
+      frontpageheading.png
+
+      mobileheading.png
 
       <p>
-        Original artwork inspired by Yorkshire's landscapes and wildlife.
-        Each print and painting is created by hand in my Leeds studio and available
-        in limited editions. Read more about me
+        Browse original artwork inspired by Yorkshire's landscapes and wildlife.
+        Each print and painting is created by hand in my Leeds studio and
+        available in limited editions. Read more about me
         <a href="about.html">here</a>.
       </p>
 
@@ -465,6 +449,7 @@
 
       </div>
 
+      <!-- Automatic slideshow -->
       <div class="slideshow-container">
 
         <div class="slide fade">
@@ -493,7 +478,7 @@
         <div class="slide fade">
           <img
             src="cowsthree.jpg"
-            alt="Cows artwork"
+            alt="Yorkshire cows artwork"
           >
         </div>
 
@@ -519,7 +504,7 @@
         <div class="slide fade">
           <img
             src="stall.jpg"
-            alt="Art stall"
+            alt="Art market stall"
           >
         </div>
 
@@ -527,15 +512,17 @@
 
     </div>
 
+    <!-- Social media icons -->
     <div class="social-icons">
 
-      <!-- Instagram -->
       <a
         href="https://www.instagram.com/alice_croft_art/"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visit Alice Croft Artist on Instagram"
+        aria-label="Instagram"
       >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.7-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
         </svg>
