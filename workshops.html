@@ -216,6 +216,49 @@
       padding: 3rem 1rem; 
       font-size: 0.9rem; 
     }
+    .workshop-calendar-box {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(250, 248, 242, 0.60);
+  border-radius: 10px;
+  box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.workshop-calendar-box h2 {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #e8c84a;
+}
+
+.calendar-container {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  background: #faf8f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.calendar-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 700px) {
+  .workshop-calendar-box {
+    padding: 1rem;
+  }
+
+  .calendar-container {
+    height: 600px;
+  }
+}
   </style>
 </head>
 
@@ -263,12 +306,34 @@
   <main>
     <div class="workshops-box">
       <h2>Workshops</h2>
-      <p>I host small‑group workshops in Leeds, introducing participants to printmaking. I also offer reduction linocut workshops for more experienced printmakers who want to dabble in making beautiful multicolour prints. Upcoming dates are announced on Instagram and through my mailing list. Please click the button below to be added to my workshop mailing list. This means I can email you when workshops become available.</p>
+      <p>I host small‑group workshops in Leeds, introducing participants to printmaking. I also offer reduction linocut workshops for more experienced printmakers who want to dabble in making beautiful multicolour prints. Upcoming dates are announced here, on Instagram and through my mailing list. Please click the button below to be added to my workshop mailing list. This means I can email you when workshops become available.</p>
 
       <a class="workshop-button" href="https://forms.gle/g8e3JjHGFpT1mLtm7" target="_blank">
         Sign up for information about workshops
       </a>
     </div>
+    <div class="workshop-calendar-box">
+
+  <h2>Upcoming Workshops</h2>
+
+  <p>
+    Browse upcoming workshop dates below. Click an event to see its
+    full details and booking information.
+  </p>
+
+  <div class="calendar-container">
+
+    <!-- Replace the iframe below with the embed code from Google Calendar -->
+
+    <iframe
+      src="<iframe src="https://calendar.google.com/calendar/embed?src=d35b3fed1c09e4c05d0788729e8dc1ee189fc475893f277d5ac45cb0a594bb1f%40group.calendar.google.com&ctz=UTC" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>"
+      title="Alice Croft Art Workshops Calendar"
+      loading="lazy">
+    </iframe>
+
+  </div>
+
+</div>
 
     <!-- ⭐ Social media icons added here -->
     <div class="social-icons">
