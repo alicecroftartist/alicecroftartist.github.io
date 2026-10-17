@@ -4,472 +4,90 @@
   <meta charset="UTF-8">
   <title>Available Work – Alice Croft Artist</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
-    body { 
-      margin: 0; 
-      font-family: "Helvetica Neue", sans-serif; 
-      background: #faf8f2; 
-      color: #1f3d2c;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("field.jpg");
-      background-size: cover;
-      background-position: center;
-      opacity: 0.2;
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    header { text-align: center; padding: 2.5rem 1rem 1rem; }
-    header img { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
-
-    nav.nav-desktop {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    nav.nav-desktop a {
-      margin: 0 1.4rem;
-      text-decoration: none;
-      color: #1f3d2c;
-      font-weight: 600;
-      border-bottom: 3px solid transparent;
-      padding-bottom: 4px;
-    }
-
-    nav.nav-desktop a:hover {
-      border-bottom: 3px solid #e8c84a;
-    }
-
-    .hamburger-wrapper {
-      display: none;
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      width: 32px;
-      cursor: pointer;
-      margin: 0 auto;
-    }
-
-    .hamburger span {
-      height: 4px;
-      background: #1f3d2c;
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: 0.3s ease;
-    }
-
-    #menu-toggle { display: none; }
-
-    nav.nav-mobile {
-      display: none;
-      flex-direction: column;
-      text-align: center;
-      background: rgba(250, 248, 242, 0.95);
-      padding: 1rem 0;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.15);
-      margin-top: 1rem;
-    }
-
-    nav.nav-mobile a {
-      padding: 1rem 0;
-      font-size: 1.2rem;
-      color: #1f3d2c;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    #menu-toggle:checked ~ nav.nav-mobile { display: flex; }
-
-    #menu-toggle:checked + .hamburger span:nth-child(1) {
-      transform: rotate(45deg) translate(6px, 6px);
-    }
-
-    #menu-toggle:checked + .hamburger span:nth-child(2) { opacity: 0; }
-
-    #menu-toggle:checked + .hamburger span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
-
-    @media (max-width: 700px) {
-      nav.nav-desktop { display: none; }
-      .hamburger-wrapper { display: block; }
-    }
-
-    main { max-width: 1200px; margin: 4rem auto; padding: 0 2rem; line-height: 1.6; }
-    h2 { border-bottom: 3px solid #e8c84a; display: inline-block; margin-bottom: 1rem; }
-
-    footer { text-align: center; padding: 3rem 1rem; font-size: 0.9rem; }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .work-item {
-      height: 460px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-
-    .work-item img {
-      max-height: 300px;
-      width: auto;
-      max-width: 100%;
-      object-fit: contain;
-      margin: 0 auto;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      background: #faf8f2;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .work-item img:hover { transform: scale(1.05); }
-
-    .work-item p {
-      margin-top: 0.5rem;
-      font-weight: 600;
-    }
-
-    .price-label {
-      margin-top: 0.2rem;
-      font-weight: 700;
-      color: #1f3d2c;
-    }
-
-    .view-button {
-      margin-top: 0.5rem;
-      background: #e8c84a;
-      padding: 8px 14px;
-      border-radius: 6px;
-      text-decoration: none;
-      color: #1f3d2c;
-      font-weight: 600;
-      transition: background 0.2s ease;
-    }
-
-    .view-button:hover { background: #d4b038; }
-
-    @media (max-width: 900px) {
-      .work-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 600px) {
-      .work-grid { grid-template-columns: 1fr; }
-    }
-
-    .social-icons {
-      margin-top: 3rem;
-      text-align: center;
-      padding: 1.5rem 0;
-    }
-
-    .social-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      margin: 0 0.7rem;
-      background: #e8c84a;
-      border-radius: 50%;
-      text-decoration: none;
-      transition: background 0.2s ease, transform 0.2s ease;
-    }
-
-    .social-icons a:hover {
-      background: #d4b43f;
-      transform: translateY(-2px);
-    }
-
-    .social-icons svg {
-      width: 24px;
-      height: 24px;
-      fill: #1f3d2c;
-    }
-
-    .intro-box {
-      padding: 2rem;
-      border-radius: 10px;
-      background: rgba(250, 248, 242, 0.60);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px 20px rgba(250, 248, 242, 0.60);
-      text-align: center;
-      line-height: 1.6;
-      margin-bottom: 3rem;
-    }
-
+    body { margin:0; font-family:"Helvetica Neue",sans-serif; background:#faf8f2; color:#1f3d2c; position:relative; }
+    body::before { content:""; position:fixed; inset:0; background-image:url("field.jpg"); background-size:cover; background-position:center; opacity:.2; z-index:-1; pointer-events:none; }
+    header { text-align:center; padding:2.5rem 1rem 1rem; }
+    header img { width:100%; max-width:600px; height:auto; display:block; margin:0 auto; }
+    nav.nav-desktop { text-align:center; margin-top:1rem; }
+    nav.nav-desktop a { margin:0 1.4rem; text-decoration:none; color:#1f3d2c; font-weight:600; border-bottom:3px solid transparent; padding-bottom:4px; }
+    nav.nav-desktop a:hover { border-bottom:3px solid #e8c84a; }
+    .hamburger-wrapper { display:none; text-align:center; margin-top:1rem; }
+    .hamburger { display:flex; flex-direction:column; width:32px; cursor:pointer; margin:0 auto; }
+    .hamburger span { height:4px; background:#1f3d2c; margin:5px 0; border-radius:2px; transition:.3s ease; }
+    #menu-toggle { display:none; }
+    nav.nav-mobile { display:none; flex-direction:column; text-align:center; background:rgba(250,248,242,.95); padding:1rem 0; border-radius:10px; box-shadow:0 0 20px rgba(0,0,0,.15); margin-top:1rem; }
+    nav.nav-mobile a { padding:1rem 0; font-size:1.2rem; color:#1f3d2c; text-decoration:none; font-weight:600; }
+    #menu-toggle:checked ~ nav.nav-mobile { display:flex; }
+    #menu-toggle:checked + .hamburger span:nth-child(1) { transform:rotate(45deg) translate(6px,6px); }
+    #menu-toggle:checked + .hamburger span:nth-child(2) { opacity:0; }
+    #menu-toggle:checked + .hamburger span:nth-child(3) { transform:rotate(-45deg) translate(6px,-6px); }
+    @media (max-width:700px) { nav.nav-desktop { display:none; } .hamburger-wrapper { display:block; } }
+    main { max-width:1200px; margin:4rem auto; padding:0 2rem; line-height:1.6; }
+    h2 { border-bottom:3px solid #e8c84a; display:inline-block; margin-bottom:1rem; }
+    footer { text-align:center; padding:3rem 1rem; font-size:.9rem; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2rem; }
+    .work-item { height:460px; display:flex; flex-direction:column; justify-content:flex-start; align-items:center; text-align:center; position:relative; }
+    .work-item > a:first-child { position:relative; display:inline-block; }
+    .work-item img { max-height:300px; width:auto; max-width:100%; object-fit:contain; margin:0 auto; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,.1); background:#faf8f2; transition:transform .3s ease; cursor:pointer; display:block; }
+    .work-item img:hover { transform:scale(1.05); }
+    .work-item p { margin-top:.5rem; font-weight:600; }
+    .price-label { margin-top:.2rem; font-weight:700; color:#1f3d2c; }
+    .view-button { margin-top:.5rem; background:#e8c84a; padding:8px 14px; border-radius:6px; text-decoration:none; color:#1f3d2c; font-weight:600; transition:background .2s ease; }
+    .view-button:hover { background:#d4b038; }
+    .sold-badge { position:absolute; top:15px; right:15px; background:#1f3d2c; color:#faf8f2; padding:8px 14px; border-radius:6px; font-weight:700; font-size:.9rem; letter-spacing:1px; z-index:2; box-shadow:0 3px 8px rgba(0,0,0,.25); }
+    @media (max-width:900px) { .work-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px) { .work-grid { grid-template-columns:1fr; } }
+    .social-icons { margin-top:3rem; text-align:center; padding:1.5rem 0; }
+    .social-icons a { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; margin:0 .7rem; background:#e8c84a; border-radius:50%; text-decoration:none; transition:background .2s ease,transform .2s ease; }
+    .social-icons a:hover { background:#d4b43f; transform:translateY(-2px); }
+    .social-icons svg { width:24px; height:24px; fill:#1f3d2c; }
+    .intro-box { padding:2rem; border-radius:10px; background:rgba(250,248,242,.60); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); box-shadow:0 0 20px 20px rgba(250,248,242,.60); text-align:center; line-height:1.6; margin-bottom:3rem; }
   </style>
 </head>
-
 <body>
-
-<header>
-  <a href="index.html">
-    <img src="logo.png" alt="Alice Croft Artist Logo">
-  </a>
-</header>
-
+<header><a href="index.html"><img src="logo.png" alt="Alice Croft Artist Logo"></a></header>
 <nav class="nav-desktop">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="available-work.html">Available Work</a>
-  <a href="process.html">Process</a>
-  <a href="workshops.html">Workshops</a>
-  <a href="exhibitions.html">Exhibitions</a>
-  <a href="commissions.html">Commissions</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="available-work.html">Available Work</a><a href="process.html">Process</a><a href="workshops.html">Workshops</a><a href="exhibitions.html">Exhibitions</a><a href="commissions.html">Commissions</a><a href="contact.html">Contact</a>
 </nav>
-
 <div class="hamburger-wrapper">
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
+  <input type="checkbox" id="menu-toggle"><label for="menu-toggle" class="hamburger"><span></span><span></span><span></span></label>
+  <nav class="nav-mobile"><a href="index.html">Home</a><a href="about.html">About</a><a href="available-work.html">Available Work</a><a href="process.html">Process</a><a href="workshops.html">Workshops</a><a href="exhibitions.html">Exhibitions</a><a href="commissions.html">Commissions</a><a href="contact.html">Contact</a></nav>
+</div>
+<main><div class="intro-box">
+<h2>Available Work</h2>
+<p>Browse current pieces available for purchase. My work is all hand painted or printed in my Leeds studio and can be purchased below.</p>
+<div class="work-grid">
 
-  <nav class="nav-mobile">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="available-work.html">Available Work</a>
-    <a href="process.html">Process</a>
-    <a href="workshops.html">Workshops</a>
-    <a href="exhibitions.html">Exhibitions</a>
-    <a href="commissions.html">Commissions</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<div class="work-item"><a href="works/A-gaggle-of-gregarious-greylag-geese.html"><img src="A gaggle of gregarious greylag geese.jpg"></a><p>"A gaggle of gregarious greylag geese"</p><div class="price-label">£120</div><a class="view-button" href="works/A-gaggle-of-gregarious-greylag-geese.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/cows-along-the-dales-way.html"><img src="cowsthree.jpg"></a><p>"Cows along the Dales Way"</p><div class="price-label">£400</div><a class="view-button" href="works/cows-along-the-dales-way.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/A-heron-in-the-reeds.html"><img src="A heron in the reeds.jpg"></a><p>"A heron in the reeds"</p><div class="price-label">£70</div><a class="view-button" href="works/A-heron-in-the-reeds.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/A-hunter-of-jewels.html"><img src="A hunter of jewels.jpg"></a><p>"A hunter of jewels"</p><div class="price-label">£20</div><a class="view-button" href="works/A-hunter-of-jewels.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/A-picnic-at-gordale-scar.html"><img src="A picnic at Gordale scar.jpg"></a><p>"A picnic at Gordale Scar"</p><div class="price-label">£70</div><a class="view-button" href="works/A-picnic-at-gordale-scar.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/A-view-through-the-winter-willow.html"><img src="A view through the winter willow.jpg"></a><p>"A view through the winter willow"</p><div class="price-label">£90</div><a class="view-button" href="works/A-view-through-the-winter-willow.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/Curlews-calling-over-pateley-bridge.html"><img src="Curlews calling over Pateley Bridge.jpg"></a><p>"Curlews calling over Pateley Bridge"</p><div class="price-label">£90</div><a class="view-button" href="works/Curlews-calling-over-pateley-bridge.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/Guardians-of-the-civic-hall.html"><img src="Guardians of the civic hall.jpg"></a><p>"Guardians of the Civic Hall"</p><div class="price-label">£90</div><a class="view-button" href="works/Guardians-of-the-civic-hall.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/Impressions-of-kirkgate-markets.html"><img src="Impressions of kirkgate markets.jpg"></a><p>"Impressions of Kirkgate Markets"</p><div class="price-label">£90</div><a class="view-button" href="works/Impressions-of-kirkgate-markets.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/Reflections-in-the-river-nidd.html"><img src="Reflections in the river Nidd.jpg"></a><p>"Reflections in the river Nidd"</p><div class="price-label">£90</div><a class="view-button" href="works/Reflections-in-the-river-nidd.html">View Artwork &amp; Purchase →</a></div>
+
+<!-- Ribblehead Viaduct: SOLD -->
+<div class="work-item"><a href="works/Ribblehead-viaduct.html"><img src="Ribblehead Viaduct, monoprint.jpg"><span class="sold-badge">SOLD</span></a><p>"Ribblehead Viaduct"</p><div class="price-label">£100</div><a class="view-button" href="works/Ribblehead-viaduct.html">View Artwork →</a></div>
+
+<div class="work-item"><a href="works/Spoonbills-at-sunset.html"><img src="Spoonbills at sunset.jpg"></a><p>"Spoonbills at sunset"</p><div class="price-label">£70</div><a class="view-button" href="works/Spoonbills-at-sunset.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/The-connoisseur-of-the-garden.html"><img src="The connoisseur of the garden .jpg"></a><p>"The connoisseur of the garden"</p><div class="price-label">£20</div><a class="view-button" href="works/The-connoisseur-of-the-garden.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/The-forgotten-summerhouse.html"><img src="The forgotten summerhouse.jpg"></a><p>"The forgotten summerhouse"</p><div class="price-label">£120</div><a class="view-button" href="works/The-forgotten-summerhouse.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/The-gardens-socialites.html"><img src="The gardens socialites.jpg"></a><p>"The gardens socialites"</p><div class="price-label">£20</div><a class="view-button" href="works/The-gardens-socialites.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/The-lone-tree-at-malham.html"><img src="The lone tree at Malham.JPG"></a><p>"The lone tree at Malham"</p><div class="price-label">£70</div><a class="view-button" href="works/The-lone-tree-at-malham.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/The-lone-tree-at-malham-blue-variant.html"><img src="The lone tree at Malham, blue variant.jpg"></a><p>"The lone tree at Malham", blue variant</p><div class="price-label">£90</div><a class="view-button" href="works/The-lone-tree-at-malham-blue-variant.html">View Artwork &amp; Purchase →</a></div>
+<div class="work-item"><a href="works/Hand-printed-names.html"><img src="Hand printed names with animal inspired letters.jpg"></a><p>Hand printed names with animal inspired letters</p><div class="price-label">Price dependant on quantity of letters</div><a class="view-button" href="works/Hand-printed-names.html">View Artwork &amp; Purchase →</a></div>
 </div>
 
-<main>
-  <div class="intro-box">
-    <h2>Available Work</h2>
-    <p>Browse current pieces available for purchase. My work is all hand painted or printed in my Leeds studio and can be purchased below.</p>
-
-    <div class="work-grid">
-
-      <!-- ⭐ Every image now links to its artwork page -->
-
-      <div class="work-item">
-        <a href="works/A-gaggle-of-gregarious-greylag-geese.html">
-          <img src="A gaggle of gregarious greylag geese.jpg">
-        </a>
-        <p>"A gaggle of gregarious greylag geese"</p>
-        <div class="price-label">£120</div>
-        <a class="view-button" href="works/A-gaggle-of-gregarious-greylag-geese.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/cows-along-the-dales-way.html">
-          <img src="cowsthree.jpg">
-        </a>
-        <p>"Cows along the Dales Way"</p>
-        <div class="price-label">£400</div>
-        <a class="view-button" href="works/cows-along-the-dales-way.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/A-heron-in-the-reeds.html">
-          <img src="A heron in the reeds.jpg">
-        </a>
-        <p>"A heron in the reeds"</p>
-        <div class="price-label">£70</div>
-        <a class="view-button" href="works/A-heron-in-the-reeds.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/A-hunter-of-jewels.html">
-          <img src="A hunter of jewels.jpg">
-        </a>
-        <p>"A hunter of jewels"</p>
-        <div class="price-label">£20</div>
-        <a class="view-button" href="works/A-hunter-of-jewels.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/A-picnic-at-gordale-scar.html">
-          <img src="A picnic at Gordale scar.jpg">
-        </a>
-        <p>"A picnic at Gordale Scar"</p>
-        <div class="price-label">£70</div>
-        <a class="view-button" href="works/A-picnic-at-gordale-scar.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/A-view-through-the-winter-willow.html">
-          <img src="A view through the winter willow.jpg">
-        </a>
-        <p>"A view through the winter willow"</p>
-        <div class="price-label">£90</div>
-        <a class="view-button" href="works/A-view-through-the-winter-willow.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Curlews-calling-over-pateley-bridge.html">
-          <img src="Curlews calling over Pateley Bridge.jpg">
-        </a>
-        <p>"Curlews calling over Pateley Bridge"</p>
-        <div class="price-label">£90</div>
-        <a class="view-button" href="works/Curlews-calling-over-pateley-bridge.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Guardians-of-the-civic-hall.html">
-          <img src="Guardians of the civic hall.jpg">
-        </a>
-        <p>"Guardians of the Civic Hall"</p>
-        <div class="price-label">£90</div>
-        <a class="view-button" href="works/Guardians-of-the-civic-hall.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Impressions-of-kirkgate-markets.html">
-          <img src="Impressions of kirkgate markets.jpg">
-        </a>
-        <p>"Impressions of Kirkgate Markets"</p>
-        <div class="price-label">£90</div>
-        <a class="view-button" href="works/Impressions-of-kirkgate-markets.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Reflections-in-the-river-nidd.html">
-          <img src="Reflections in the river Nidd.jpg">
-        </a>
-        <p>"Reflections in the river Nidd"</p>
-        <div class="price-label">£90</div>
-        <a class="view-button" href="works/Reflections-in-the-river-nidd.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Ribblehead-viaduct.html">
-          <img src="Ribblehead Viaduct, monoprint.jpg">
-        </a>
-        <p>"Ribblehead Viaduct"</p>
-        <div class="price-label">£100</div>
-        <a class="view-button" href="works/Ribblehead-viaduct.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Spoonbills-at-sunset.html">
-          <img src="Spoonbills at sunset.jpg">
-        </a>
-        <p>"Spoonbills at sunset"</p>
-        <div class="price-label">£70</div>
-        <a class="view-button" href="works/Spoonbills-at-sunset.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/The-connoisseur-of-the-garden.html">
-          <img src="The connoisseur of the garden .jpg">
-        </a>
-        <p>"The connoisseur of the garden"</p>
-        <div class="price-label">£20</div>
-        <a class="view-button" href="works/The-connoisseur-of-the-garden.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/The-forgotten-summerhouse.html">
-          <img src="The forgotten summerhouse.jpg">
-        </a>
-        <p>"The forgotten summerhouse"</p>
-        <div class="price-label">£120</div>
-        <a class="view-button" href="works/The-forgotten-summerhouse.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/The-gardens-socialites.html">
-          <img src="The gardens socialites.jpg">
-        </a>
-        <p>"The gardens socialites"</p>
-        <div class="price-label">£20</div>
-        <a class="view-button" href="works/The-gardens-socialites.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/The-lone-tree-at-malham.html">
-          <img src="The lone tree at Malham.JPG">
-        </a>
-        <p>"The lone tree at Malham"</p>
-        <div class="price-label">£70</div>
-        <a class="view-button" href="works/The-lone-tree-at-malham.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/The-lone-tree-at-malham-blue-variant.html">
-          <img src="The lone tree at Malham, blue variant.jpg">
-        </a>
-        <p>"The lone tree at Malham", blue variant</p>
-        <div class="price-label">£90</div>
-        <a class="view-button" href="works/The-lone-tree-at-malham-blue-variant.html">View Artwork & Purchase →</a>
-      </div>
-
-      <div class="work-item">
-        <a href="works/Hand-printed-names.html">
-          <img src="Hand printed names with animal inspired letters.jpg">
-        </a>
-        <p>Hand printed names with animal inspired letters</p>
-        <div class="price-label">Price dependant on quantity of letters</div>
-        <a class="view-button" href="works/Hand-printed-names.html">View Artwork & Purchase →</a>
-      </div>
-      
-
-    </div>
-  
-  
-
-    <!-- ⭐ Social media icons added here -->
-    <div class="social-icons">
-
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/alice_croft_art/" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.7-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
-        </svg>
-      </a>
-
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/profile.php?id=61584874794567" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
-        </svg>
-      </a>
-
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@alicecroftart" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2h2.1c.2 1.7 1.4 3.2 3 3.7v2.1c-1.1-.1-2.2-.5-3.1-1.1v6.6a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v2.2c-.3-.1-.6-.1-.9-.1a3.1 3.1 0 1 0 3.1 3.1V2z"/>
-        </svg>
-      </a>
-
-    </div>
-
-  </main>
-
-  <footer>© 2026 Alice Croft Artist</footer>
-
-
-
+<div class="social-icons">
+<a href="https://www.instagram.com/alice_croft_art/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.7-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/></svg></a>
+<a href="https://www.facebook.com/profile.php?id=61584874794567" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/></svg></a>
+<a href="https://www.tiktok.com/@alicecroftart" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2h2.1c.2 1.7 1.4 3.2 3 3.7v2.1c-1.1-.1-2.2-.5-3.1-1.1v6.6a5.3 5.3 0 1 1-5.3-5.3c.3 0 .6 0 .9.1v2.2c-.3-.1-.6-.1-.9-.1a3.1 3.1 0 1 0 3.1 3.1V2z"/></svg></a>
+</div>
+</div></main>
+<footer>© 2026 Alice Croft Artist</footer>
 </body>
 </html>
